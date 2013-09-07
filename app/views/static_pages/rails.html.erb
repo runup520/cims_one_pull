@@ -1,0 +1,6 @@
+<ul>
+<%@rails.each do |rail|%>
+	<li><%=link_to rail.title,article_path(rail)%></br>
+		<%=raw rail.content%></li>
+<%end%>
+</ul>

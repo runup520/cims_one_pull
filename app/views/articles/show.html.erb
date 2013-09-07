@@ -1,0 +1,13 @@
+<div class="row">  
+    <div class="span12">
+    	<%= link_to '返回文章列表',root_path%></br>
+    	   主题:<%=@article.title%>
+			</br>
+			主题:<%=@article.tag%>
+			</br>
+		   内容
+		    </br>
+		   <%=raw @article.content%>
+			</br>					
+    </div>
+</div>
