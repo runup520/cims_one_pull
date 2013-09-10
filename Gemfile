@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'taps'
 gem 'heroku'
+gem 'sunspot_rails'
 
 
 gem 'rails_kindeditor', '0.4.0'
@@ -32,5 +33,9 @@ end
 
 group :production do
 gem 'pg'
+end
+
+group :development do
+gem 'sunspot_solr'
 end
 

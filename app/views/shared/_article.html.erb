@@ -1,0 +1,13 @@
+ <section>
+ 	       <%= render 'shared/success' %>
+ 	       <%= render 'shared/comment_errors' %>
+ 	      
+    	
+    	   <p align="center"><strong><%=@article.title%></strong><p>
+			</br>
+		   <p align="left"><small>标签:<%=@article.tag%> &nbsp; &nbsp; &nbsp; 新建时间:<%=@article.created_at%></small></p>
+		    
+		    </br>
+		   <%=raw @article.content%>
+			</br>	
+ </section>				

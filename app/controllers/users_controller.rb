@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index,:edit, :update,:destroy]
   before_filter :correct_user, only: [:edit, :update]
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "welcome"
+      flash[:success] = "欢迎"
       #下面两句都是可以的
       # redirect_to user_path(@user)
       redirect_to @user

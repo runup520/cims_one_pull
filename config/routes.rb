@@ -1,12 +1,18 @@
 Chapter3::Application.routes.draw do
  
  resources :users
- resources :articles
+ 
+ resources :articles do
+    resources :comments
+ end
+
  resources :sessions, only: [:new, :create, :destroy]
 
 
 
  root to: 'static_pages#home'
+
+  match '/home', to: 'static_pages#home'
  
  match '/help', to: 'static_pages#help'
  match '/about', to: 'static_pages#about'
@@ -17,10 +23,32 @@ Chapter3::Application.routes.draw do
  match '/signin', to: 'sessions#new'
  match '/signout', to: 'sessions#destroy', via: :delete
 
-match '/km',  to: 'static_pages#km'
+ match '/km',  to: 'static_pages#km'
+
+
+
+ match '/pm',  to: 'static_pages#pm'
+
+ match '/time',  to: 'static_pages#time'
+ match '/ecommerce',  to: 'static_pages#ecommerce'
+ match '/product',  to: 'static_pages#product'
+ match '/mobile',  to: 'static_pages#mobile'
+ match '/movie',  to: 'static_pages#movie'
+ match '/logic',  to: 'static_pages#logic'
+ match '/read',  to: 'static_pages#read'
+ match '/life',  to: 'static_pages#life'
+match '/web',  to: 'static_pages#web'
+
 match '/java',  to: 'static_pages#java'
-match '/rails',  to: 'static_pages#rails'
-match '/js',  to: 'static_pages#js'
+
+match '/ruby',  to: 'static_pages#ruby'
+match '/data',  to: 'static_pages#data'
+
+match '/searchresult',  to: 'static_pages#searchresult'
+
+
+
+
 
 
   # The priority is based upon order of creation:

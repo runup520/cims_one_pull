@@ -1,0 +1,15 @@
+<style>
+  .textbg{width:80%}
+</style>
+
+<section>
+	<hr>
+	
+	<%= form_tag searchresult_path, :method => :get do %>
+		<p>
+	     &nbsp;&nbsp;&nbsp;&nbsp;<%= text_field_tag :search, params[:search],:class=>'textbg' %></br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;<%= submit_tag "全文检索", :title => nil,class: "btn btn-large btn-primary" %>
+		</p>
+	<% end %>
+	<hr>
+</section>

@@ -1,0 +1,10 @@
+ <section>    
+    <ul>
+	    <%@articles_results.each do |result|%>
+			<p><strong><font><%=link_to result.title,article_path(result)%></strong></font></p></br>
+			<%=raw result.content%>
+		<hr>				
+	    <%end%>	   
+    </ul>
+    
+<section>

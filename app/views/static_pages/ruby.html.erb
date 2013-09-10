@@ -1,6 +1,16 @@
-<ul>
-<%@rails.each do |rail|%>
-	<li><%=link_to rail.title,article_path(rail)%></br>
-		<%=raw rail.content%></li>
-<%end%>
-</ul>
+
+<% provide(:title,'web开发')%>
+
+	 <div class="row">
+		<div class="span10">
+		    <%= render 'shared/top' %>
+		    <%= render 'shared/rubys' %>  
+		</div>
+
+		<div class="span2">
+		    <%= render 'shared/personal' %> 
+		    <%= render 'shared/information' %>          
+		    <%= render 'shared/search' %>   
+		    <%= render 'shared/tips' %> 
+		</div>      
+	</div>
