@@ -1,33 +1,25 @@
+ <% provide(:title,'用户发表知识')%>
+ 
 <div class="row">
-    <aside class="span4">
+    <div class="span10">
+    <%= render 'shared/top' %>
+        <div class="row">              
+            <div class="span10">
+               <div>
+                <section>
+			      <%= render 'shared/publish_article' %>
+			      <%= render 'shared/user_publish_articles' %>
+			    </section>
+			    </div>
 
-      <section>
-        用户名：
-        <%=@user.name%></br>
-        <%=@user.email%>
-      </section>
-    </aside> 
-
-    <div class="span8">
-    	<%= link_to '发布知识',new_article_path,class: "btn btn-large btn-primary" %>	
-      </br>
-      <%=paginate @articles, :theme => 'twitter-bootstrap' %>
-    	<ol>
-      
-      
-			<%@articles.each do |t|%>
-			<li>
-      <%=link_to t.title,t %>   
-      <span class="timestamp">
-       发表于 <%= time_ago_in_words(t.created_at) %> ago.
-      </span>
-      </br>
-			<%=link_to '编辑',edit_article_path(t) %>|
-				<%= link_to '删除',article_path(t), method: :delete, data: { confirm: '确定删除?' } %>
-   		</li>
-      
-       <%end%>
-      </ol>   
+            </div>
+        </div>   
     </div>
+    
+    <div class="span2">
+	    <%= render 'shared/personal' %>	
+        <%= render 'shared/information' %>	              
+	    <%= render 'shared/search' %>	       
+    </div> 
 </div>
 

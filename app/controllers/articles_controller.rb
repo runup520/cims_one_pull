@@ -14,7 +14,9 @@ class ArticlesController < ApplicationController
 
 	def index
 		@user = User.find(current_user)
-		@articles = Article.page(params[:page]).per(10)
+		@articles = @user.articles.page(params[:page]).per(10)
+		@admin_articles = Article.all
+		
 	end
 
 	def edit
@@ -31,7 +33,27 @@ class ArticlesController < ApplicationController
 
 
 	def show
+		@articles = Article.page(params[:page]).per(4)	
+		@article = Article.find(params[:id])
+		@article_user = User.find(@article.user_id)
 
+        #评论的用户应该是当前的用户
+		@user = User.find(current_user)
+		@critic = @article.critics.build(:user_id=>@current_user.id)
+		@critics = Critic.where("article_id=?",params[:id])
+
+        #评论的用户应该是当前的用户
+        @pinglun_user = User.find(current_user)
+
+
+
+		@programmer_shows = Article.where("tag = '编程学习'")
+		@fun_shows = Article.where("tag = '生活娱乐'")
+		@new_shows = Article.where("tag = '新生问答'").page(params[:page]).per(10)
+		@old_shows = Article.where("tag = '老生资源'").page(params[:page]).per(10)
+		@jobs = Article.where("tag = '就业信息'")
+		@job_shows = Article.where("tag = '就业信息'")
+		@work_shows = Article.where("tag = '就业信息'")
 		@kms = Article.where("tag = '知识管理'")
 	    @rails = Article.where("tag = 'rails开发'")
 	    @pms = Article.where("tag = '产品经理'")
@@ -46,12 +68,7 @@ class ArticlesController < ApplicationController
 	    @webs = Article.where("tag = 'web开发'")
 	    @javas = Article.where("tag = 'java学习'")
 	    @rubys = Article.where("tag = 'ruby学习'")
-	    @datas = Article.where("tag = '数据结构'")
-	    @articles = Article.page(params[:page]).per(4)	
-		@article = Article.find(params[:id])
-		@user = User.find(@article.user_id)
-        
-        @article = Article.find(params[:id])
+	    @datas = Article.where("tag = '数据结构'")	    
 		@comment = @article.comments.find_by_id(params[:id])
 	end
 

@@ -1,0 +1,24 @@
+<div>
+    <hr>
+    读者评论:
+    <% @critics.each do |critic| %>
+              
+    <table>
+        <tr>
+          <td rowspan="2" width="25%"> <img src="../assets/article.png"></td>
+          <td><p><small>用户名称:<%=@article_user.name%></small></p></td>
+        </tr>
+
+        <tr>
+          <td><p><small>评论时间:<%=critic.created_at%></small></p></td>
+        </tr>
+        <hr>
+
+    </table>
+          
+    <p>
+        &nbsp;&nbsp;&nbsp;<%=raw critic.content %>
+    </p>
+
+    <% end %>
+</div>

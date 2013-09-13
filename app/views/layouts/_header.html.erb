@@ -1,12 +1,20 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "在路上", root_path, id: "logo" %>
+      <%= link_to "CIMS知识共享平台", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">       
           <% if signed_in? %>
-            <li><%= link_to "用户群", users_path %></li>
-            <li><%= link_to "发布知识", articles_path %></li>
+
+            <% if current_user.admin? %>
+                <li><%= link_to "管理员", admin_path %></li>  
+            <% end %>
+            
+
+
+
+            <li><%= link_to "用户圈", users_path %></li>
+            <li><%= link_to "发布文章", articles_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 账户 <b class="caret"></b>
@@ -20,12 +28,8 @@
                 </li>
               </ul>
             </li>
-          <% else %>
-    
-                
-                <li><%= link_to "关于作者", contact_path%></li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-               <!--  <li><a href="http://localhost:3000/about">关于作者&nbsp;&nbsp;&nbsp;</a></li> -->
+          <% else %>         
+                <li><%= link_to "用户登陆", signin_path%></li>               
           <% end %>
         </ul>
       </nav>

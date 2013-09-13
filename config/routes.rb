@@ -6,6 +6,9 @@ Chapter3::Application.routes.draw do
     resources :comments
  end
 
+ resources :critics
+
+
  resources :sessions, only: [:new, :create, :destroy]
 
 
@@ -37,14 +40,24 @@ Chapter3::Application.routes.draw do
  match '/logic',  to: 'static_pages#logic'
  match '/read',  to: 'static_pages#read'
  match '/life',  to: 'static_pages#life'
+ 
 match '/web',  to: 'static_pages#web'
-
 match '/java',  to: 'static_pages#java'
-
 match '/ruby',  to: 'static_pages#ruby'
 match '/data',  to: 'static_pages#data'
-
 match '/searchresult',  to: 'static_pages#searchresult'
+match '/job',  to: 'static_pages#job'
+match '/job_show',  to: 'static_pages#job_show'
+match '/seven_show',  to: 'static_pages#seven_show'
+match '/work_show',  to: 'static_pages#work_show'
+match '/programmer_show',  to: 'static_pages#programmer_show'
+match '/fun_show',  to: 'static_pages#fun_show'
+match '/new_show',  to: 'static_pages#new_show'
+match '/old_show',  to: 'static_pages#old_show'
+
+match '/admin',  to: 'static_pages#admin'
+
+
 
 
 

@@ -1,0 +1,35 @@
+<style type="text/css">
+  .textbg2{width:30%;},
+  .textbg3{width:30px,height:100px;}
+</style>
+
+
+<% provide(:title, "发布文章") %>
+<div class="span8">
+<%= form_for(@article) do |f| %>
+
+  <p>      
+      <small>题目: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</small><%= f.text_field :title ,:class=>'textbg2'%>
+  </p>
+
+  <p>      
+      <small>标签: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</small><%= f.select :tag, options_for_select([['知识问答'], ['知识问答']]), 
+      :class=>'textbg3'%>
+  </p>
+
+    
+   <p>
+      <small>内容:</small> <%= f.kindeditor :content, :width => 400, :height => 400, :langType => 'en' %> 
+   </p>
+  
+  <div class="actions">
+    <%= f.submit  :提交 , class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+</div>
+
+
+
+ 
+
+

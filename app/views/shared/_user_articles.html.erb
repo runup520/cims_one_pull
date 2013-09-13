@@ -1,0 +1,9 @@
+ <section class="span8">
+     <%=paginate @articles, :theme => 'twitter-bootstrap' %>         
+    <ol>
+	    <%@articles.each do |article|%>
+			<li><%=link_to article.title,article_path(article)%></li>				
+	    <%end%>	   
+    </ol>
+    
+<section>

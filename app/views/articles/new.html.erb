@@ -1,40 +1,17 @@
-
-
 <div class="row">
-    <aside class="span4">    
-      <section>
-        用户名：
-        <%=@user.name%></br>
-        <%=@user.email%>
-      </section>
-    </aside> 
-
-
-<div class="span8">
-<%= form_for(@article) do |f| %>
-
-  <div class="field">
-    <%= f.label :题目 %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :标签 %><br />
-    <%= f.text_field :tag%>
-
-
-  </div>
+    <div class="span10">
+	    <%= render 'shared/top' %>
+	        <div class="row">              
+	            <div class="span10">                  
+					    <%= render 'shared/publish_article_content'%>					    					
+	            </div>
+	        </div>   
+    </div>
     
-  <div class="field">
-    <%= f.label :内容 %><br />
-    <%= f.kindeditor :content, :width => 470, :height => 400, :langType => 'en' %> 
-  </div>
-  
-  <div class="actions">
-    <%= f.submit  :提交 , class: "btn btn-large btn-primary" %>
-  </div>
-<% end %>
-</div>
-  
+    <div class="span2">
+	    <%= render 'shared/personal' %>	
+        <%= render 'shared/information' %>	              
+	    <%= render 'shared/search' %>	       
+    </div> 
 </div>
 

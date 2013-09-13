@@ -6,6 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'taps'
 gem 'heroku'
 gem 'sunspot_rails'
+gem 'rails-i18n'
 
 
 gem 'rails_kindeditor', '0.4.0'

@@ -1,0 +1,10 @@
+ <section>
+     <%=paginate @seven_shows, :theme => 'twitter-bootstrap' %>         
+    <ul>
+	    <%@seven_shows.each do |seven_show|%>
+			<li><%=link_to seven_show.title,article_path(seven_show)%></li>
+	    <%end%>	   
+    </ul>
+          
+    
+<section>

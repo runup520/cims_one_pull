@@ -1,0 +1,7 @@
+<ol>
+	<%=paginate @work_shows, :theme => 'twitter-bootstrap' %>         
+	<%@work_shows.each do |work_show|%>
+		<li><%=link_to work_show.title,article_path(work_show)%>
+		</li>
+	<%end%>
+</ol>

@@ -1,9 +1,21 @@
-<% provide(:title, 'All users') %>
-<h3 align="center">所有的用户</h3>
+<% provide(:title, '查看所有用户') %>
 
-<ul class="users">
-	<ul class="users">
-		<%= render @users %>
-	</ul>
-</ul>
+<div class="row">
+        <div class="span10">
+        <%= render 'shared/top' %>
+            <div class="row">              
+                <div class="span10">
+                   <%= render 'shared/users_all' %>                    
+                </div>
+            </div>   
+        </div>
+        
+        <div class="span2">
+		    <%= render 'shared/personal' %>	
+	        <%= render 'shared/information' %>	              
+		    <%= render 'shared/search' %>	       
+        </div> 
+</div>
+
+
 

@@ -5,7 +5,14 @@
     	
     	   <p align="center"><strong><%=@article.title%></strong><p>
 			</br>
-		   <p align="left"><small>标签:<%=@article.tag%> &nbsp; &nbsp; &nbsp; 新建时间:<%=@article.created_at%></small></p>
+		   <p align="left">
+		   	   <small>标签:<%=@article.tag%> &nbsp; &nbsp; &nbsp; 
+		   	   	     新建时间:<%=l @article.created_at%>&nbsp; &nbsp; &nbsp;
+		   	   	     文章作者:<%= @article_user.name%>
+		   	   </small>
+		   </p>
+
+		   
 		    
 		    </br>
 		   <%=raw @article.content%>
